@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss"
 
 const config = {
     // ativa o modo dark por classe (permite toggle manual)
-    darkMode: ["class"],
+    darkMode: "class",
 
     // onde o tailwind vai procurar classes CSS
     content: [

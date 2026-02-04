@@ -17,7 +17,7 @@ import axios, { AxiosError } from 'axios'
  * Vem do arquivo .env.local
  * NEXT_PUBLIC_ = variável acessível no browser
  */
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
+const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 /**
  * Instância do Axios configurada

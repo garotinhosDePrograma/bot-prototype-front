@@ -1,15 +1,3 @@
-/**
- * Cliente HTTP - Configuração do Axios
- * 
- * Este arquivo configura o Axios para fazer requisições à API
- * 
- * Conceitos:
- * - Axios: Biblioteca para fazer requisições HTTP (alternativa ao fetch)
- * - Interceptors: Funções que rodam antes/depois de cada requisição
- * - Base URL: URL base da API (vem do .env)
- * - Authorization: Header com token JWT
- */
-
 import axios, { AxiosError } from 'axios'
 
 /**

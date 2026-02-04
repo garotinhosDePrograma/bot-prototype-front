@@ -1,0 +1,47 @@
+run = "npm run dev"
+entrypoint = "src/app/page.tsx"
+modules = ["nodejs-20"]
+
+[nix]
+channel = "stable-23_11"
+
+[env]
+PATH = "/home/runner/$REPL_SLUG/.config/npm/node_global/bin:/home/runner/$REPL_SLUG/node_modules/.bin"
+npm_config_prefix = "/home/runner/$REPL_SLUG/.config/npm/node_global"
+
+[packager]
+language = "nodejs"
+
+[packager.features]
+packageSearch = true
+guessImports = true
+enabledForHosting = false
+
+[languages.javascript]
+pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
+syntax = "javascript"
+
+[languages.javascript.languageServer]
+start = "typescript-language-server --stdio"
+
+[deployment]
+run = ["npm", "run", "start"]
+deploymentTarget = "cloudrun"
+
+[agent]
+expertMode = true
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[workflows]
+
+[[workflows.workflow]]
+name = "next"
+mode = "sequential"
+author = 48223061
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"

@@ -1,37 +1,72 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { AuthProvider } from "@/contexts/AuthContext";
+/**
+ * Layout Raiz da Aplicação
+ * 
+ * Este componente envolve TODAS as páginas
+ * Aqui configuramos:
+ * - Metadados (título, descrição)
+ * - Fontes
+ * - Providers (Auth, Theme, etc)
+ * - Estilos globais
+ */
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import { AuthProvider } from '@/contexts/AuthContext'
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+/**
+ * Configuração da fonte Inter (Google Fonts)
+ * subset: 'latin' = apenas caracteres latinos (menor tamanho)
+ */
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
 
+/**
+ * Metadados da aplicação
+ * Aparece no <head> do HTML
+ */
 export const metadata: Metadata = {
-  title: "Bot Worker - Chatbot Inteligente",
-  description: "Chatbot inteligente multi-fonte com autenticação",
-};
+  title: 'Bot Worker - Chatbot Inteligente',
+  description: 'Chatbot inteligente com busca em múltiplas fontes de conhecimento',
+  keywords: ['chatbot', 'ia', 'bot', 'assistente virtual'],
+  authors: [{ name: 'Seu Nome' }],
+  // Cor do tema (mobile)
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0f' },
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+  ],
+}
 
+/**
+ * Layout Raiz
+ * 
+ * Conceitos:
+ * - children: Conteúdo das páginas (vai mudar)
+ * - RootLayout: Sempre presente em todas as páginas
+ * - Providers: Envolvem children para dar acesso global
+ */
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="pt-BR" className="dark">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      {/* 
+        className="dark" força modo escuro
+        Remove se quiser light mode por padrão
+      */}
+      <body className={inter.className}>
+        {/* 
+          AuthProvider envolve toda aplicação
+          Agora qualquer componente pode usar useAuth()
+        */}
         <AuthProvider>
           {children}
         </AuthProvider>
       </body>
     </html>
-  );
+  )
 }

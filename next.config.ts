@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Otimizações
-  swcMinify: true,
   compress: true,
   poweredByHeader: false,
 

@@ -1,15 +1,18 @@
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === 'development',
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   compress: true,
   poweredByHeader: false,
-
-  // Configurações de imagem (se usar Next Image)
   images: {
     domains: ['https://bot-prototype.onrender.com'],
     formats: ['image/avif', 'image/webp'],
   },
-
-  // Headers de segurança
   async headers() {
     return [
       {
@@ -33,4 +36,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+module.exports = withPWA(nextConfig);

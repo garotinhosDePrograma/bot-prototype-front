@@ -99,7 +99,7 @@ export default function HistoryPage() {
           {/* Info de busca */}
           {searchQuery && (
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Search className="h-4 w-4" />
+              <search className="h-4 w-4" />
               <span>
                 Buscando por: <strong>{searchQuery}</strong>
                 {!isSearching && ` (${conversations.length} resultados)`}

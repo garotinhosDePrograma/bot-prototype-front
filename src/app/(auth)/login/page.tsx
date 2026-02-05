@@ -56,7 +56,7 @@ export default function LoginPage() {
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-4">
                         <Bot className="w-8 h-8 text-primary" />
                     </div>
-                    <h1 className="text-3xl font-bold text-foreground">Bot Worker</h1>
+                    <h1 className="text-3xl font-bold text-foreground">Proto Bot</h1>
                     <p className="text-muted-foreground mt-2">
                         Chatbot inteligente multi-fonte
                     </p>

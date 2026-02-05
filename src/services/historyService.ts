@@ -55,7 +55,7 @@ export const getHistory = async (
   limit: number = 20,
   offset: number = 0
 ): Promise<HistoryResponse> => {
-  const response = await api.get('/bot/history', {
+  const response = await api.get('/api/bot/history', {
     params: { user_id: userId, limit, offset }
   })
   return response.data
@@ -69,7 +69,7 @@ export const searchConversations = async (
   query: string,
   limit: number = 20
 ): Promise<SearchResponse> => {
-  const response = await api.get('/bot/search', {
+  const response = await api.get('/api/bot/search', {
     params: { user_id: userId, q: query, limit }
   })
   return response.data
@@ -81,7 +81,7 @@ export const searchConversations = async (
 export const getConversationDetail = async (
   conversationId: number
 ): Promise<{ status: string; conversation: ConversationDetail }> => {
-  const response = await api.get(`/bot/conversation/${conversationId}`)
+  const response = await api.get(`/api/bot/conversation/${conversationId}`)
   return response.data
 }
 
@@ -92,7 +92,7 @@ export const deleteConversation = async (
   conversationId: number,
   userId: number
 ): Promise<{ status: string; message: string }> => {
-  const response = await api.delete(`/bot/conversation/${conversationId}`, {
+  const response = await api.delete(`/api/bot/conversation/${conversationId}`, {
     data: { user_id: userId }
   })
   return response.data
@@ -104,7 +104,7 @@ export const deleteConversation = async (
 export const clearHistory = async (
   userId: number
 ): Promise<{ status: string; message: string; deleted_count: number }> => {
-  const response = await api.delete('/bot/history/clear', {
+  const response = await api.delete('/api/bot/history/clear', {
     data: { user_id: userId }
   })
   return response.data

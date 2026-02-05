@@ -1,12 +1,12 @@
 /**
  * Estilos Globais - Tailwind CSS 4
- * Tema dark por padrão com variáveis OKLCH
+ * TEMA DARK PERMANENTE (sem light mode)
  */
 
 @import "tailwindcss";
 @plugin "tailwindcss-animate";
 
-/* ==================== TEMA DARK (Padrão) ==================== */
+/* ==================== TEMA DARK (Único) ==================== */
 @theme {
   /* Cores base */
   --color-background: oklch(0.15 0.02 264);
@@ -49,38 +49,6 @@
   --radius-md: var(--radius);
   --radius-lg: calc(var(--radius) + 0.25rem);
   --radius-xl: calc(var(--radius) + 0.5rem);
-}
-
-/* ==================== TEMA LIGHT (Opcional) ==================== */
-@media (prefers-color-scheme: light) {
-  @theme {
-    --color-background: oklch(1 0 0);
-    --color-foreground: oklch(0.15 0.02 264);
-
-    --color-card: oklch(1 0 0);
-    --color-card-foreground: oklch(0.15 0.02 264);
-    --color-popover: oklch(1 0 0);
-    --color-popover-foreground: oklch(0.15 0.02 264);
-
-    --color-primary: oklch(0.50 0.25 280);
-    --color-primary-foreground: oklch(0.98 0.01 264);
-
-    --color-secondary: oklch(0.96 0.01 264);
-    --color-secondary-foreground: oklch(0.15 0.02 264);
-
-    --color-muted: oklch(0.96 0.01 264);
-    --color-muted-foreground: oklch(0.55 0.05 257);
-
-    --color-accent: oklch(0.55 0.18 180);
-    --color-accent-foreground: oklch(0.15 0.02 264);
-
-    --color-destructive: oklch(0.60 0.25 25);
-    --color-destructive-foreground: oklch(0.98 0.01 264);
-
-    --color-border: oklch(0.92 0.01 255);
-    --color-input: oklch(0.92 0.01 255);
-    --color-ring: oklch(0.50 0.25 280);
-  }
 }
 
 /* ==================== ESTILOS BASE ==================== */

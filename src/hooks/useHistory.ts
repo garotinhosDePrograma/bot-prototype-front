@@ -10,7 +10,7 @@ import * as historyService from '@/services/historyService'
 import type { HistoryConversation } from '@/services/historyService'
 
 export function useHistory() {
-  const { user } = useAuthStore()
+  const { user } = useAuth()
   
   const [conversations, setConversations] = useState<HistoryConversation[]>([])
   const [loading, setLoading] = useState(true)
@@ -107,8 +107,8 @@ export function useHistory() {
   /**
    * Deleta uma conversa
    */
-  const deleteConversation = useCallback(async (conversationId: number) => {
-    if (!user) return
+  const deleteConversation = useCallback(async (conversationId: number): Promise<boolean> => {
+    if (!user) return false
 
     try {
       await historyService.deleteConversation(conversationId, user.id)
@@ -128,8 +128,8 @@ export function useHistory() {
   /**
    * Limpa todo o histórico
    */
-  const clearAllHistory = useCallback(async () => {
-    if (!user) return
+  const clearAllHistory = useCallback(async (): Promise<boolean> => {
+    if (!user) return false
 
     try {
       await historyService.clearHistory(user.id)

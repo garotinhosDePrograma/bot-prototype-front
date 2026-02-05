@@ -51,7 +51,7 @@ export default function HomePage() {
 
           {/* Título */}
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 animate-slide-up">
-            Bot Worker
+            Proto Bot
           </h1>
 
           {/* Subtítulo */}

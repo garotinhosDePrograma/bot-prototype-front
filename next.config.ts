@@ -1,8 +1,8 @@
-const withPWA = require('@ducanh2912/next-pwa').default({
+const withPWA = require('next-pwa')({
   dest: 'public',
-  disable: process.env.NODE_ENV === 'development',
   register: true,
   skipWaiting: true,
+  disable: process.env.NODE_ENV === 'development',
 });
 
 /** @type {import('next').NextConfig} */
@@ -10,12 +10,7 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'bot-prototype.onrender.com',
-      },
-    ],
+    domains: ['https://bot-prototype.onrender.com'],
     formats: ['image/avif', 'image/webp'],
   },
   async headers() {

@@ -31,7 +31,7 @@ export function useChat() {
     {
       id: 'welcome',
       type: 'bot',
-      content: 'Olá! Sou o Bot Worker. Faça uma pergunta e vou buscar a melhor resposta em múltiplas fontes!',
+      content: 'Olá! Sou o Proto Bot. Faça uma pergunta e vou buscar a melhor resposta em múltiplas fontes!',
       timestamp: new Date(),
     },
   ])

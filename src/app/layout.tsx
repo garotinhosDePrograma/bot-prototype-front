@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   title: 'Proto Bot - Chatbot Inteligente',
   description: 'Chatbot inteligente com busca em múltiplas fontes de conhecimento',
   keywords: ['chatbot', 'ia', 'bot', 'assistente virtual'],
-  authors: [{ name: 'Seu Nome' }],
+  authors: [{ name: 'Luiz' }],
   // Cor do tema (mobile)
   themeColor: [
     { media: '(prefers-color-scheme: dark)', color: '#0a0a0f' },

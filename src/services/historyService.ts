@@ -4,7 +4,7 @@
  * Endpoints para gerenciar histórico do bot
  */
 
-import api from './api'
+import api from '@/lib/api'
 
 export interface HistoryConversation {
   id: number

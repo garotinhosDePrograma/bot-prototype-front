@@ -28,7 +28,7 @@ const inter = Inter({
  * Aparece no <head> do HTML
  */
 export const metadata: Metadata = {
-  title: 'Bot Worker - Chatbot Inteligente',
+  title: 'Proto Bot - Chatbot Inteligente',
   description: 'Chatbot inteligente com busca em múltiplas fontes de conhecimento',
   keywords: ['chatbot', 'ia', 'bot', 'assistente virtual'],
   authors: [{ name: 'Seu Nome' }],

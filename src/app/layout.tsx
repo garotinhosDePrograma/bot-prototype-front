@@ -34,7 +34,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Luiz' }],
   //PWA
   manifest: '/manifest.json',
-  themeColor: '#00000',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',

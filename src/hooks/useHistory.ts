@@ -5,7 +5,7 @@
  */
 
 import { useState, useEffect, useCallback } from 'react'
-import { useAuthStore } from '@/contexts/AuthContext'
+import { useAuth } from '@/contexts/AuthContext'
 import * as historyService from '@/services/historyService'
 import type { HistoryConversation } from '@/services/historyService'
 
